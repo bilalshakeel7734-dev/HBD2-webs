@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memories 💜</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           MEMORIES PAGE
+        ========================= */
+
+        .memories-page {
+            min-height: calc(100vh - 70px);
+            padding: 70px 7%;
+
+            background:
+                radial-gradient(circle at top,
+                    rgba(135, 35, 190, 0.25),
+                    transparent 35%),
+                linear-gradient(135deg,
+                    #050008,
+                    #110018,
+                    #050008);
+        }
+
+        .memories-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .memories-heading .small-title {
+            color: #d994ff;
+            font-size: 15px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .memories-heading h1 {
+            font-size: clamp(40px, 7vw, 70px);
+            color: white;
+
+            text-shadow:
+                0 0 15px rgba(190, 70, 255, 0.4),
+                0 0 35px rgba(190, 70, 255, 0.25);
+        }
+
+        .memories-heading h1 span {
+            color: #d36cff;
+        }
+
+        .memories-heading p {
+            max-width: 650px;
+            margin: 18px auto 0;
+
+            color: #c9b8d0;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           PHOTO GRID
+        ========================= */
+
+        .memory-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* =========================
+           PHOTO CARD
+        ========================= */
+
+        .memory-card {
+            position: relative;
+
+            background: rgba(30, 7, 42, 0.8);
+
+            border: 1px solid rgba(190, 80, 255, 0.3);
+
+            border-radius: 22px;
+
+            padding: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 0 25px rgba(160, 50, 230, 0.12);
+
+            transition: 0.4s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-8px);
+
+            border-color: rgba(215, 110, 255, 0.7);
+
+            box-shadow:
+                0 0 35px rgba(190, 70, 255, 0.35);
+        }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .memory-card img {
+            width: 100%;
+            height: 430px;
+
+            display: block;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            transition: 0.5s ease;
+        }
+
+        .memory-card:hover img {
+            transform: scale(1.03);
+        }
+
+
+        /* =========================
+           CARD TEXT
+        ========================= */
+
+        .memory-info {
+            padding: 18px 10px 10px;
+
+            text-align: center;
+        }
+
+        .memory-info h2 {
+            color: #e09aff;
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+        .memory-info p {
+            color: #bba8c2;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-home {
+            text-align: center;
+
+            margin-top: 50px;
+        }
+
+        .back-home a {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            background: linear-gradient(135deg,
+                    #8b24c9,
+                    #c04cff);
+
+            box-shadow:
+                0 0 18px rgba(190, 70, 255, 0.35);
+
+            transition: 0.3s ease;
+        }
+
+        .back-home a:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 28px rgba(205, 80, 255, 0.6);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .memories-page {
+                padding: 50px 18px;
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+            .memory-card img {
+                height: 420px;
+            }
+
+            .memories-heading {
+                margin-bottom: 35px;
+            }
+
+            .memories-heading h1 {
+                font-size: 42px;
+            }
+
+            .memories-heading p {
+                font-size: 14px;
+            }
+        }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .memory-card img {
+                height: 360px;
+            }
+
+            .memories-heading h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🎂 Birthday ♡
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="memories.html" class="active">
+                Memories
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- Memories Section -->
+    <main class="memories-page">
+
+        <div class="memories-heading">
+
+            <p class="small-title">
+                ✨ Beautiful Moments ✨
+            </p>
+
+            <h1>
+                Our <span>Memories</span> 💜
+            </h1>
+
+            <p>
+                Kuch moments sirf photos nahi hotay,
+                balkay beautiful memories ban jate hain. ♡
+            </p>
+
+        </div>
+
+
+        <!-- FOUR PHOTO CARDS -->
+        <section class="memory-grid">
+
+
+            <!-- CARD 1 -->
+            <div class="memory-card">
+
+                <img src="1.jpg" alt="Beautiful Memory 1">
+
+                <div class="memory-info">
+
+                    <h2>Beautiful Moment 💜</h2>
+
+                    <p>
+                        A beautiful memory that will
+                        always be special. ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="memory-card">
+
+                <img src="2.jpg" alt="Beautiful Memory 2">
+
+                <div class="memory-info">
+
+                    <h2>Sweet Memory ✨</h2>
+
+                    <p>
+                        Some moments become memories
+                        forever. 💜
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="memory-card">
+
+                <img src="3.jpg" alt="Beautiful Memory 3">
+
+                <div class="memory-info">
+
+                    <h2>Special Moment 🌸</h2>
+
+                    <p>
+                        A little moment, a beautiful
+                        memory. ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+            <div class="memory-card">
+
+                <img src="4.jpg" alt="Beautiful Memory 4">
+
+                <div class="memory-info">
+
+                    <h2>Forever Memory 💜</h2>
+
+                    <p>
+                        Memories that deserve a special
+                        place in the heart. ✨
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Back Button -->
+        <div class="back-home">
+
+            <a href="index.html">
+                ← Back to Birthday
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Made with 💜 for a Special Birthday
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
